@@ -1,0 +1,8 @@
+<div class="container">
+	<h1>Profile Page</h1>
+		<p><%= current_user.first_name %></p>
+		<p><%= current_user.last_name %></p>
+		<p><%= current_user.email %></p>
+	<h3>My Recipes</h3>
+	<%= current_user.recipes %>	
+</div>
