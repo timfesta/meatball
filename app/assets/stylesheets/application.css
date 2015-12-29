@@ -13,3 +13,15 @@
  *= require_tree .
  *= require_self
  */
+/*.navbar navrbar-fluid {
+	margin-bottom: 0;
+}*/
+
+.jumbotron {
+	background-image: url(coit.png);
+	height: 400px;
+	width: 100%;
+	background-repeat: no-repeat;
+}
+
+

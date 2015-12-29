@@ -2,27 +2,29 @@
 <html>
 	<head>
 	  	<title>Roopacies</title>
+		  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.6/journal/bootstrap.css" rel="stylesheet">
 		  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-		  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-		  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.5/cosmo/bootstrap.css">
 		  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 		  <%= csrf_meta_tags %>
 	</head>
 	<body>
 		<nav class="navbar navbar-default">
 		  	<div class="container-fluid">
-		    	<ul class="nav navbar-nav">
-		        	<li><%= link_to "Home", root_path %></li>
-		        </ul>
-		      	<ul class="nav navbar-nav navbar-right">
-		      		<% if logged_in? %>
-		      		<li><%= link_to "Profile", profile_path %></li>
-		      		<li><%= link_to "Log Out", logout_path %></li>
-		      		<% else %>
-		      		<li><%= link_to "Log In", login_path %></li>
-		      		<li><%= link_to "Sign Up", signup_path %></li>
-		      		<% end %>
-		      	</ul>
+		  		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	  				<ul class="nav navbar-nav">
+	  			    	<li><%= link_to "Home", root_path %></li>
+	  			    </ul>
+	  			  	<ul class="nav navbar-nav navbar-right">
+	  			  		<% if logged_in? %>
+	  			  		<li><%= link_to "Profile", profile_path %></li>
+	  			  		<li><%= link_to "Log Out", logout_path %></li>
+	  			  		<% else %>
+	  			  		<li><%= link_to "Log In", login_path %></li>
+	  			  		<li><%= link_to "Sign Up", signup_path %></li>
+	  			  		<% end %>
+	  			  	</ul>
+		  		</div> 	
 		  	</div>
 		</nav>
 

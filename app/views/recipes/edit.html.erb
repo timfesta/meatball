@@ -1,0 +1,8 @@
+<div class="container">
+	<h1>Edit Recipe</h1>
+	<%= form_for(@recipe) do |f| %>
+		<p><%= f.text_field :name, placeholder: "Name" %></p>	
+		<p><%= f.text_field :instructions, placeholder: "instructions" %></p>
+		<p><%= f.submit "Update" %></p>
+	<% end %>	
+</div>

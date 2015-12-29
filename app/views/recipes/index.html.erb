@@ -1,3 +1,19 @@
-<%= @recipes.each do |recipe| %>
-<%= recipe.name %>
-<% end %>
+<div class="jumbotron">
+</div>
+<div class="container">
+	<% @recipes.each do |recipe| %>
+	<p>
+		<%= recipe.name %> -
+		<%= recipe.instructions %> -
+		<%= link_to "View", recipe_path(recipe) %> -
+		<%= link_to "Edit", edit_recipe_path(recipe) %>
+	</p>
+	<% end %>
+	<br>
+	<% if current_user %>
+		<p><%= link_to "Add Recipe", new_recipe_path, class: "btn btn-primary" %></p>
+	<% else %>
+	<% end %>
+</div>
+
+
