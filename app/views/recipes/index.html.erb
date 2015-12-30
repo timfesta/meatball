@@ -5,9 +5,13 @@
 		<% @recipes.each do |recipe| %>
 		<div class="col-md-4 col-md-offset-2">
 			<h2><%= recipe.name %></h2>
-			<%= recipe.instructions %> -
-			<%= link_to "View", recipe_path(recipe) %> -
-			<%= link_to "Edit", edit_recipe_path(recipe) %>
+			<p><em>Instructions</em>:
+				<%= recipe.instructions %>
+			</p> 
+			<p>
+				<%= link_to "View", recipe_path(recipe) %> -
+				<%= link_to "Edit", edit_recipe_path(recipe) %>
+			</p>
 		</div>
 		<% end %>	
 	</div>
@@ -23,7 +27,6 @@
 	<% end %>
 </div>
 <footer>
-	<br>
 	<br>
 	<br>
 	<br>
