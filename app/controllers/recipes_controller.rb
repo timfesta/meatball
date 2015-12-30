@@ -5,8 +5,12 @@ class RecipesController < ApplicationController
 	end
 
 	def new
-		@recipe = Recipe.new
+		if current_user
+			@recipe = Recipe.new
 		render :new
+		else
+			redirect_to login_path
+		end
 	end
 
 	def create
@@ -19,11 +23,19 @@ class RecipesController < ApplicationController
 	end
 
 	def show
-		@recipe = Recipe.find(params[:id])
+		if current_user
+			@recipe = Recipe.find(params[:id])
+		else
+			redirect_to login_path
+		end
 	end
 
 	def edit
-		@recipe = Recipe.find(params[:id])
+		if current_user
+			@recipe = Recipe.find(params[:id])
+		else
+			redirect_to login_path
+		end
 	end
 
 	def update
