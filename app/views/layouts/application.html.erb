@@ -2,33 +2,45 @@
 <html>
 	<head>
 	  	<title>Rassipies</title>
-		  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-		  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.6/journal/bootstrap.css" rel="stylesheet">
-		  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-		  <%= csrf_meta_tags %>
+	  	<meta name="viewport" content="width=device-width, initial-scale=1">
+	  	<%= csrf_meta_tags %>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.6/journal/bootstrap.css" rel="stylesheet">
+		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>	  
 	</head>
+
 	<body>
-		<nav class="navbar navbar-default">
+		<nav class="navbar navbar-default navbar-static-top" role="navigation">
 		  	<div class="container-fluid">
-		  		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-	  				<ul class="nav navbar-nav">
-	  			    	<li><%= link_to "Home", root_path %></li>
-	  			    </ul>
-	  			  	<ul class="nav navbar-nav navbar-right">
-	  			  		<% if logged_in? %>
-	  			  		<li><%= link_to "Profile", profile_path %></li>
-	  			  		<li><%= link_to "Log Out", logout_path %></li>
-	  			  		<% else %>
-	  			  		<li><%= link_to "Log In", login_path %></li>
-	  			  		<li><%= link_to "Sign Up", signup_path %></li>
-	  			  		<% end %>
-	  			  	</ul>
-		  		</div> 	
+		  		<div class="navbar-header">
+		  			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		    			<span class="icon-bar"></span>
+		    			<span class="icon-bar"></span>
+		    			<span class="icon-bar"></span>
+		    		</button>	
+	    			<ul class="nav navbar-nav">
+	    		    	<li><%= link_to "Home", root_path %></li>
+	    		    </ul>
+		    	</div>
+		    	<div class="collapse navbar-collapse">
+		    		<ul class="nav navbar-nav navbar-right">
+		    			<% if logged_in? %>
+		    			<li><%= link_to "Profile", profile_path %></li>
+		    			<li><%= link_to "Log Out", logout_path %></li>
+		    			<% else %>
+		    			<li><%= link_to "Log In", login_path %></li>
+		    			<li><%= link_to "Sign Up", signup_path %></li>
+		    			<% end %>
+		    		</ul>
+		    	</div>
 		  	</div>
 		</nav>
 
 <%= yield %>
 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
 	</body>
 </html>
